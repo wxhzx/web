@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <title>北财学生信息管理系统</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet" href="css/tabris.css">
+    <link rel="stylesheet" href="css/lib.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style>
+    	*{
+    		padding: 0px;
+    		margin: 0px;
+    	}
+		#main{background: rgba(0,0,0,0);height: auto;position: absolute;top:-10px;z-index: 999;color: #fff;width: 100%}
+		:root {
+			--bg: #3C465C;
+			--primary: #78FFCD;
+			--solid: #fff;
+		}
+		* {box-sizing: border-box;}
+		*:before, *:after {box-sizing: border-box;}
+
+		body {
+			height: 100vh;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+			-ms-flex-flow: wrap;
+			    flex-flow: wrap;
+			background: var(--bg);
+			font-size: 20px;
+			font-family: 'Titillium Web', sans-serif;
+		}
+		h1 {
+			color: var(--solid);
+			font-size: 2.5rem;
+			margin-top: 6rem;	
+		}
+		.btn {
+			position: relative;
+			margin: 0 auto;
+			width: 10em;
+			color: var(--primary);
+			border: .15em solid var(--primary);
+			border-radius: 5em;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 1.3em;
+			line-height: 2em;
+			cursor: pointer;	
+		}
+		.dot {
+			content: '';
+			position: absolute;
+			top: 0;
+			display: block;
+			width: 20%;
+			height: 100%;
+			border-radius: 100%;
+			-webkit-transition: all 300ms ease;
+			transition: all 300ms ease;
+			opacity: 0;
+		}
+		.dot:after {
+			content: '';
+			position: absolute;
+			left: calc(50% - .4em);
+			top: -.4em;
+			height: .8em;
+			width: .8em;
+			background: var(--primary);
+			border-radius: 1em;
+			border: .25em solid var(--solid);
+			box-shadow: 0 0 .7em var(--solid),
+						0 0 2em var(--primary);
+		}
+		.btn:hover .dot,
+		.btn:focus .dot {
+			-webkit-animation: atom 2s infinite linear;
+			        animation: atom 2s infinite linear;
+			opacity: 1;
+		}
+		@-webkit-keyframes atom {
+			0% {-webkit-transform: translateX(0) rotate(0);transform: translateX(0) rotate(0);}
+			25%{-webkit-transform: translateX(400%) rotate(0);transform: translateX(400%) rotate(0);}
+			50% {-webkit-transform: translateX(400%) rotate(180deg);transform: translateX(400%) rotate(180deg);}
+			75% {-webkit-transform: translateX(0) rotate(180deg);transform: translateX(0) rotate(180deg);}
+			100% {-webkit-transform: translateX(0) rotate(360deg);transform: translateX(0) rotate(360deg);}
+		}
+		@keyframes atom {
+			0% {-webkit-transform: translateX(0) rotate(0);transform: translateX(0) rotate(0);}
+			25%{-webkit-transform: translateX(400%) rotate(0);transform: translateX(400%) rotate(0);}
+			50% {-webkit-transform: translateX(400%) rotate(180deg);transform: translateX(400%) rotate(180deg);}
+			75% {-webkit-transform: translateX(0) rotate(180deg);transform: translateX(0) rotate(180deg);}
+			100% {-webkit-transform: translateX(0) rotate(360deg);transform: translateX(0) rotate(360deg);}
+		}
+		.btn{margin-top: 50px;margin-left: 50px;}
+		#h1{width: 100%;text-align: right;position: absolute;font-size: 35px;top: -40px;right: 50px;color: #78FFCD}
+		@media screen and (max-width:760px) {
+			/*css语句*/#h1{display: none;}
+		}
+		
+    </style>
+</head>
+
+<body>
+    <div class="bg0 pa">
+        <div class="bg1"></div>
+    </div>
+    <div class="hx-box pa">
+        <ul class="pr">
+            <li class="hx-k1 pa0">
+                <span></span>
+            </li>
+            <li class="hx-k2 pa0">
+                <span></span>
+            </li>
+            <li class="hx-k3 pa0">
+                <span></span>
+            </li>
+        </ul>
+    </div>
+</body>
+<div id="main">
+	<h1 id="h1">北财员工信息管理系统</h1>
+	
+	<!-- <span>开发人员：王爱民</span> -->
+	<div class="btn">
+		<span>注册</span>
+		<div class="dot"></div>
+	</div>
+	<div class="btn btn2">
+		<span>登录</span>
+		<div class="dot"></div>
+	</div>
+	<div class="btn btn3">
+		<span>信息系统</span>
+		<div class="dot"></div>
+	</div>
+	<div class="btn btn4">
+		<span>评论区</span>
+		<div class="dot"></div>
+	</div>
+
+</div>
+<script type="text/javascript">
+	$(".btn:first").click(function(){
+		 window.location.href="dlzc2/register.html";
+	})
+	$(".btn2").click(function(){
+		 window.location.href="dlzc2/login.html";
+	})
+	$(".btn3").click(function(){
+		 window.location.href="public/index.html";
+	})
+	$(".btn4").click(function(){
+		 alert("温馨提示：此功能暂未开放，敬请期待！")
+	})
+</script>
+    <canvas id="canvas-club"></canvas>
+    <script type="text/javascript">
+            var c = document.getElementById("canvas-club");
+var ctx = c.getContext("2d");
+var w = c.width = window.innerWidth;
+var h = c.height = window.innerHeight;
+var clearColor = 'rgba(0, 0, 0, .1)';
+var max = 30;
+var drops = [];
+
+function random(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function O() {}
+
+O.prototype = {
+    init: function() {
+        this.x = random(0, w);
+        this.y = 0;
+        this.color = 'hsl(180, 100%, 50%)';
+        this.w = 2;
+        this.h = 1;
+        this.vy = random(4, 5);
+        this.vw = 3;
+        this.vh = 1;
+        this.size = 2;
+        this.hit = random(h * .8, h * .9);
+        this.a = 1;
+        this.va = .96;
+    },
+    draw: function() {
+        if (this.y > this.hit) {
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y - this.h / 2);
+
+            ctx.bezierCurveTo(
+                this.x + this.w / 2, this.y - this.h / 2,
+                this.x + this.w / 2, this.y + this.h / 2,
+                this.x, this.y + this.h / 2);
+
+            ctx.bezierCurveTo(
+                this.x - this.w / 2, this.y + this.h / 2,
+                this.x - this.w / 2, this.y - this.h / 2,
+                this.x, this.y - this.h / 2);
+
+            ctx.strokeStyle = 'hsla(180, 100%, 50%, ' + this.a + ')';
+            ctx.stroke();
+            ctx.closePath();
+
+        } else {
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.size, this.size * 5);
+        }
+        this.update();
+    },
+    update: function() {
+        if (this.y < this.hit) {
+            this.y += this.vy;
+        } else {
+            if (this.a > .03) {
+                this.w += this.vw;
+                this.h += this.vh;
+                if (this.w > 100) {
+                    this.a *= this.va;
+                    this.vw *= .98;
+                    this.vh *= .98;
+                }
+            } else {
+                this.init();
+            }
+        }
+
+    }
+}
+
+function resize() {
+    w = c.width = window.innerWidth;
+    h = c.height = window.innerHeight;
+}
+
+function setup() {
+    for (var i = 0; i < max; i++) {
+        (function(j) {
+            setTimeout(function() {
+                var o = new O();
+                o.init();
+                drops.push(o);
+            }, j * 200)
+        }(i));
+    }
+}
+
+function anim() {
+    ctx.fillStyle = clearColor;
+    ctx.fillRect(0, 0, w, h);
+    for (var i in drops) {
+        drops[i].draw();
+    }
+    requestAnimationFrame(anim);
+}
+
+window.addEventListener("resize", resize);
+
+setup();
+anim();
+    </script>
+    <script type="text/javascript">
+    	// 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器 
+		var useragent = navigator.userAgent;
+		if (useragent.match(/AppleWebKit/i) != 'AppleWebKit') {
+		// 这里警告框会阻塞当前页面继续加载 
+		alert('已禁止本次访问：您必须使用最新版谷歌浏览器访问本页面！');
+		// 以下代码是用javascript强行关闭当前页面 
+		var opened = window.open('about:blank', '_self');
+		    opened.opener = null;
+		    opened.close();
+		}
+
+    </script>
+</html>
